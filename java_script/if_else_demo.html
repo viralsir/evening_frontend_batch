@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>if else demo</title>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+
+      document.getElementById("maxbtn").onclick=()=>{
+
+        let no1=eval(document.getElementById("no1").value);
+        let no2=eval(document.getElementById("no2").value);
+        let no3=eval(document.getElementById("no3").value);
+
+        if(no1>0 && no2>0 && no3>0)
+        {
+          if(no1>no2 && no1>no3)
+          {
+            document.getElementById("output").innerHTML=`${no1} is a maximum no`;
+          }
+          else if(no2>no3 && no2>no1)
+          {
+            document.getElementById("output").innerHTML=`${no2} is a maximum no`;
+          }
+          else
+          {
+            document.getElementById("output").innerHTML=`${no3} is a maximum no`;
+          }
+
+        }
+        else
+        {
+          document.getElementById("output").innerHTML=`Invalid Input`;
+        }
+
+
+
+      }
+
+    })
+  </script>
+</head>
+<body>
+<form>
+  No1 : <input type="number" id="no1"> <br/>
+  No2 : <input type="number" id="no2"> <br/>
+  No3 : <input type="number" id="no3"> <br/>
+
+  <input type="button" value="Max" id="maxbtn" >
+  <input type="reset" value="clear">
+</form>
+
+ <h1 id="output"></h1>
+</body>
+</html>
