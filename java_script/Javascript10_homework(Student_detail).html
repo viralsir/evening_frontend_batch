@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Detail</title>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            document.getElementById("cal").onclick=() =>{
+
+             const PASSING_MARK=35;
+             let name = document.getElementById("name").value;
+             let roll_n =document.getElementById("roll_n").value;
+             let maths = eval(document.getElementById("maths").value);
+             let eng = eval(document.getElementById("eng").value);
+             let sci = eval(document.getElementById("sci").value);
+             document.getElementById("output").innerHTML="";
+             document.getElementById("grade").innerHTML="";
+
+             if(maths<0 || maths>100)
+             {
+                 document.getElementById("mathserror").innerHTML="invalid marks";
+             }
+             else if(sci<0 || sci>100)
+             {
+                    document.getElementById("scienceerror").innerHTML="invalid marks";
+              }
+              else  if(eng<0 || eng>100)
+              {
+                    document.getElementById("englisherror").innerHTML="invalid marks";
+              }
+              else
+             {
+                 document.getElementById("mathserror").innerHTML="";
+                 document.getElementById("scienceerror").innerHTML="";
+                 document.getElementById("englisherror").innerHTML="";
+
+                 if(maths<PASSING_MARK || sci<PASSING_MARK || eng<PASSING_MARK)
+                 {
+                     document.getElementById("output").innerHTML="you are fail";
+                 }
+                 else
+                 {
+                     document.getElementById("output").innerHTML="you are pass";
+                     let total = maths+eng+sci;
+                     let percentage =(maths+eng+sci)/3;
+                     if(percentage>90)
+                     {
+                         document.getElementById("grade").innerHTML='Grade : A';
+                     }
+                     else if(percentage>70)
+                     {
+                         document.getElementById("grade").innerHTML='Grade : B';
+                     }
+                     else if(percentage>55)
+                     {
+                         document.getElementById("grade").innerHTML='Grade : C';
+                     }
+                     else
+                     {
+                         document.getElementById("grade").innerHTML='Grade : D';
+                     }
+
+                 }
+
+             }
+
+
+
+
+
+               /* if( maths>=PASSING_MARK && sci>=PASSING_MARK && eng >=PASSING_MARK)
+                {
+                    document.getElementById("output").innerHTML="you are pass";
+                }
+                else
+                {
+                    document.getElementById("output").innerHTML="you are fail";
+                }*/
+
+
+
+
+            }
+
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+<form>
+  <h2>Fill Student Detail</h2>
+  Name : <input type="text" id="name"><br>
+  Roll_no. : <input type="text" id="roll_n"><br>
+  Maths : <input type="number" id="maths"> <span id="mathserror" style="color:red"></span> <br>
+  English : <input type="number" id="eng"><span id="englisherror" style="color:red"></span><br>
+  Science : <input type="number" id="sci"><span id="scienceerror" style="color:red"></span><br> <br>
+
+            <input type="button" id="cal" value="Calculation">
+            <input type="button" value="Reset">
+
+</form>
+
+<h1 id="output"> </h1>
+<h1 id="grade"></h1>
+</body>
+</html>
