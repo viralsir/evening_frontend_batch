@@ -91,20 +91,39 @@
     </script>
 </head>
 <body>
+<table border="2">
 <form>
-  <h2>Fill Student Detail</h2>
-  Name : <input type="text" id="name"><br>
-  Roll_no. : <input type="text" id="roll_n"><br>
-  Maths : <input type="number" id="maths"> <span id="mathserror" style="color:red"></span> <br>
-  English : <input type="number" id="eng"><span id="englisherror" style="color:red"></span><br>
-  Science : <input type="number" id="sci"><span id="scienceerror" style="color:red"></span><br> <br>
+  <tr>
+    <td>
+      <h2>Fill Student Detail</h2>
+      Name : <input type="text" id="name"><br>
+      Roll_no. : <input type="text" id="roll_n"><br>
+      Maths : <input type="number" id="maths"> <span id="mathserror" style="color:red"></span> <br>
+      English : <input type="number" id="eng"><span id="englisherror" style="color:red"></span><br>
+      Science : <input type="number" id="sci"><span id="scienceerror" style="color:red"></span><br> <br>
 
-            <input type="button" id="cal" value="Calculation">
-            <input type="button" value="Reset">
+      <input type="button" id="cal" value="Calculation">
+      <input type="button" value="Reset">
 
 </form>
+    </td>
+    <td>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Rollno</th>
+             <th>Maths</th>
+              <th>English</th>
+               <th>Science</th>
+          </tr>
+        </table>
+      <h1 id="output"> </h1>
+      <h1 id="grade"></h1>
+    </td>
+  </tr>
 
-<h1 id="output"> </h1>
-<h1 id="grade"></h1>
+
+
+</table>
 </body>
 </html>
