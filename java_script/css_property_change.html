@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css property change </title>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+
+      document.getElementById("redbtn").onclick=()=>{
+
+        document.getElementById("output").style.color='red';
+
+      }
+
+      document.getElementById("bluebtn").onclick=()=>{
+        document.getElementById("output").style.color='blue';
+      }
+
+      document.getElementById("greenbtn").onclick=()=>{
+        document.getElementById("output").style.color="green";
+      }
+
+
+    })
+  </script>
+</head>
+<body>
+<h1 id="output">Hello</h1>
+
+<form>
+  <input type="button" value="red" id="redbtn">
+  <input type="button" value="blue" id="bluebtn">
+  <input type="button" value="green" id="greenbtn">
+
+</form>
+
+</body>
+</html>

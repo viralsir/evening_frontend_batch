@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css property change </title>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+
+      for (let button of document.getElementsByClassName("btn")) {
+              button.onclick=()=>{
+                document.getElementById("output").style.color=button.dataset.fontcolor;
+
+        }
+
+      }
+
+    })
+  </script>
+</head>
+<body>
+<h1 id="output">Hello</h1>
+
+<form>
+  <input type="button" value="red"  data-fontcolor="red"  class="btn"  >
+  <input type="button" value="blue" data-fontcolor="blue" class="btn"  >
+  <input type="button" value="green" data-fontcolor="green"  class="btn" >
+  <input type="button" value="pink" data-fontcolor="pink"  class="btn"  >
+
+
+</form>
+
+</body>
+</html>

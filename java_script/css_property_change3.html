@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css property change </title>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+
+     document.getElementById("fontcolor").onchange=()=>{
+
+       document.getElementById("output").style.backgroundColor=document.getElementById("fontcolor").value;
+
+     }
+
+    })
+  </script>
+</head>
+<body>
+<h1 id="output">Hello</h1>
+
+<form>
+  Color : <select name="" id="fontcolor">
+  <option value="red">red</option>
+  <option value="green">green</option>
+  <option value="blue">blue</option>
+  <option value="yellow">yellow</option>
+</select>
+
+</form>
+
+</body>
+</html>

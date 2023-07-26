@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taxes</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=> {
+
+            document.getElementById("calculatebtn").onclick = () => {
+
+                let salary=eval(document.getElementById("salary").value);
+                document.getElementById("output").innerHTML="";
+                let below_3_lac_tax_Rate=0;
+                let below_5_lac_tax_Rate=0.10;
+
+              if(salary<=300000)
+                {
+                    tax=0;
+                    document.getElementById("output").innerHTML=`Tax : ${tax}`;
+                  document.getElementById("output").style.color='white';
+                  document.getElementById("output").style.backgroundColor='red';
+                }
+                else if(salary>300000 && salary<=500000)
+                {
+                    // tax=((salary-300000)*0.10)
+                       tax=((salary%300000)*below_5_lac_tax_Rate)
+
+                  document.getElementById("output").innerHTML=`Tax : ${tax}`;
+                }
+                else if(salary>500000 && salary<=1000000)
+                {
+                    //tax=((200000)*0.10) + ((salary-500000)*0.20)
+                    tax=20000 + ((salary%500000)*0.20)
+
+                  document.getElementById("output").innerHTML=`Tax : ${tax}`;
+                }
+                else if(salary>1000000 && salary<=2000000)
+                {
+                    tax=((200000)*0.10) + ((500000)*0.20) + ((salary-1000000)*0.30)
+                    document.getElementById("output").innerHTML=`Tax : ${tax }`;
+                   document.getElementById("output").style.color='white';
+                   document.getElementById("output").style.backgroundColor='green';
+                }
+                else if(salary>2000000)
+                {
+                   tax=((200000)*0.10) + ((500000)*0.20) + ((1000000)*0.30) + ((salary-2000000)*0.40)
+                    document.getElementById("output").innerHTML=`Tax : ${tax}`;
+                }
+            }
+        })
+    </script>
+
+</head>
+<body>
+<form>
+  Salary : <input type="number" id="salary">
+    <input type="button" value="Calculate" id="calculatebtn">
+</form>
+
+<h1 id="output"></h1>
+
+</body>
+</html>
