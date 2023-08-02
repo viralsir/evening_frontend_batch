@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>array demo </title>
+
+
+</head>
+<body>
+<div id="output">
+
+</div>
+
+
+Rollno : <input type="text" id="rollno"><br/>
+Name  : <input type="text" id="name"><br/>
+Maths : <input type="text" id="maths"><br/>
+
+
+<input type="button" value="add" id="addbtn">
+
+
+<script>
+      // let json1={"username":"vimal","password":1234};
+      // console.log(json1.username);
+      // console.log(json1["username"]);
+      // json1.role="administrator";
+      // console.log(json1);
+      // json1.username="amit";
+      // console.log(json1);
+      // json1.phno=[232323,232323]
+      // // console.log(json1);
+      // // console.log(json1.phno[0]);
+      // // json1.phno={"home":232323,"office":34333}
+      // // console.log(json1);
+      // // console.log(json1.phno.home)
+      //
+      // for (const json1Key in json1) {
+      //      //   console.log(json1Key,json1[json1Key]);
+      //     document.getElementById("output").innerHTML +=` ${json1Key} => ${json1[json1Key]} <br/> `
+      // }
+
+      // let array1=[];
+      // array1.push({"rollno":1,"name":"viren"})
+      // console.log(array1);
+      // console.log(array1[0]);
+      // console.log(array1[0].name)
+      // array1.push({"rollno":2,"name":"vijay"})
+      // console.log(array1);
+      // console.log(array1[1]);
+      // console.log(array1[1].name)
+
+      let studentlist=[];
+      document.getElementById("addbtn").onclick=()=>{
+
+        let student={};
+        student.rollno=document.getElementById("rollno").value;
+        student.name=document.getElementById("name").value;
+        student.maths=document.getElementById("maths").value;
+
+        studentlist.push(student);
+        document.getElementById("output").innerHTML="";
+
+        for (const student of studentlist) {
+           //console.log(student);
+         //  document.getElementById("output").innerHTML=student;
+          for (const Key in student) {
+            //   console.log(json1Key,json1[json1Key]);
+            document.getElementById("output").innerHTML +=` ${Key} => ${student[Key]}   `
+          }
+          document.getElementById("output").innerHTML+="<br/>";
+
+
+        }
+
+
+
+      }
+
+
+
+</script>
+
+</body>
+</html>

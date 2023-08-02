@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jsondemo</title>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      let studentList=[];
+      document.getElementById("savebtn").onclick=()=>{
+
+        let student={};
+        student["rollno"]=document.getElementById("rollno").value;
+        student["name"]=document.getElementById("name").value;
+        student["maths"]=document.getElementById("maths").value;
+        student["sci"]=document.getElementById("sci").value;
+
+        studentList.push(student);
+
+
+        let table = document.createElement("table");
+        let headerrow=document.createElement("tr");
+        let heading=["Roll No:","Name","Maths","Science"]
+        for (const element of heading) {
+              let th=document.createElement("th");
+              th.innerHTML=element;
+              headerrow.append(th);
+        }
+        table.append(headerrow);
+
+
+
+
+
+      }
+
+
+    })
+  </script>
+
+</head>
+
+<body>
+    <table>
+      <tr>
+        <th colspan="2"> Student Info </th>
+      </tr>
+      <tr>
+        <td>
+               <table>
+                 <tr>
+                   <th colspan="2"> Entry Form </th>
+                 </tr>
+                 <tr>
+                   <th>
+                     Roll No:
+                   </th>
+                   <td><input type="number" id="rollno"></td>
+                 </tr>
+                 <tr>
+                   <th> Name :</th>
+                   <td><input type="text" id="name"></td>
+                 </tr>
+                 <tr>
+                   <th> Maths :</th>
+                   <td><input type="number" id="maths"></td>
+                 </tr>
+                 <tr>
+                   <th>Science :</th>
+                   <td><input type="number" id="sci"></td>
+                 </tr>
+                 <tr>
+                   <td colspan="2">
+                     <input type="button" value="save" id="savebtn">
+                     <input type="reset" value="clear">
+                   </td>
+                 </tr>
+               </table>
+        </td>
+      </tr>
+      <tr id="output">
+
+      </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>array demo </title>
+
+
+</head>
+<body>
+<div id="output">
+
+</div>
+
+Element value : <input type="text" id="element"><br/>
+<input type="button" value="add" id="addbtn">
+
+
+<script>
+
+  let array1=["vimal","viren",4,55];
+
+  //console.log(array1[1]);
+  //document.getElementById("output").innerHTML=array1;
+  //array1.push(678,3444,4555);
+  //array1.push(454);
+  //for (const array1Element of array1) {
+  //  document.getElementById("output").innerHTML+=array1Element+"<br/>";
+ // }
+
+  for (let i = 0; i < array1.length; i++)
+  {
+    document.getElementById("output").innerHTML+=array1[i]+"<br/>";
+  }
+
+  document.getElementById("addbtn").onclick=()=>{
+
+    array1.push(document.getElementById("element").value);
+    document.getElementById("output").innerHTML="";
+    for (let i = 0; i < array1.length; i++)
+    {
+      document.getElementById("output").innerHTML+=array1[i]+"<br/>";
+    }
+    document.getElementById("element").value="";
+  }
+
+</script>
+
+</body>
+</html>
