@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>rest api </title>
+  <style>
+     table{
+        border:2px solid black;
+        border-collapse: collapse;
+     }
+     th,td{
+       border : 2px solid black;
+       padding: 10px;
+       text-align: center;
+       font-family: Arial;
+       font-size: medium;
+     }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+
+
+      document.getElementById("postbtn").onclick=()=>{
+
+        fetch("https://jsonplaceholder.typicode.com/photos")
+          .then(response => response.json())
+          .then(data =>{
+            console.log(data);
+            document.getElementById("output").innerHTML="";
+            let table=document.createElement("table");
+
+            let hearderrow=document.createElement("tr");
+            let header=["albumId","id","title","url","thumnailurl"]
+            for (const element of header) {
+                 let th=document.createElement("th");
+                 th.innerHTML=element;
+                 hearderrow.append(th);
+            }
+            table.append(hearderrow);
+            for (const record of data) {
+              let tr = document.createElement("tr");
+              for (const Key in record) {
+                let td = document.createElement("td");
+
+                 if(Key=="thumbnailUrl")
+                 {
+                   td.innerHTML=`<img src="${record[Key]}">`;
+                 }
+                 else
+                 {
+                   td.innerHTML = record[Key];
+                 }
+
+
+                tr.append(td);
+                table.append(tr);
+              }
+            }
+
+            document.getElementById("output").append(table);
+
+          })
+
+
+
+      }
+
+
+
+    })
+  </script>
+
+</head>
+<body>
+<input type="button" value="get data" id="postbtn"> <br/>
+<div id="output"></div>
+
+
+</body>
+</html>
